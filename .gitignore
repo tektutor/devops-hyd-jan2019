@@ -1,2 +1,6 @@
 *.log
 *.retry
+*.class
+*.*.swp
+target/**/*
+

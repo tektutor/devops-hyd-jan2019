@@ -1,0 +1,24 @@
+- name: Provisions Ubuntu and  CentOS containers
+  hosts: localhost
+  tasks:
+    - name: Create Ubuntu containers
+      docker_container:
+         name: "ubuntu{{item}}"
+         hostname: "ubuntu{{item}}"
+         image: "tektutor/ansible-ubuntu"
+         state: started
+         ports:
+           - "200{{item}}:22"
+           - "800{{item}}:80"
+      with_sequence: start=1 end=5
+
+    - name: Create CentOS containers
+      docker_container:
+         name: "centos{{item}}"
+         hostname: "centos{{item}}"
+         image: "tektutor/ansible-centos"
+         state: started
+         ports:
+           - "300{{item}}:22"
+           - "900{{item}}:80"
+      with_sequence: start=1 end=5

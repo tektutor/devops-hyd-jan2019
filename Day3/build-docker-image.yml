@@ -1,0 +1,16 @@
+- name: Build ubuntu and centos docker images
+  hosts: localhost
+  tasks:
+   - name: Build Ubuntu ansible image
+     docker_image:
+        name: "tektutor/ansible-ubuntu"
+        state: build
+        dockerfile: UbuntuDockerfile
+        path: .
+
+   - name: Build CentOS ansible image
+     docker_image:
+        name: "tektutor/ansible-centos"
+        state: build
+        dockerfile: CentOSDockerfile
+        path: .
