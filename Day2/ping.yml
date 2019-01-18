@@ -1,0 +1,9 @@
+---
+
+- name: This playbook will demonstrate the use of ping module
+  hosts: all
+  tasks:
+   - name: Ping the remote server
+     ping:
+
+...

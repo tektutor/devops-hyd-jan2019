@@ -1,0 +1,15 @@
+1. Listing all docker images in the local registry
+   docker images
+
+2. Listing all docker containers that are currently running
+   docker ps
+
+3. Listing all dockers containers irrespective of their running state
+   docker ps -a
+
+4. Creating a new container and run it in an interactive mode
+   docker run -it ubuntu /bin/bash
+
+5. Creating a new container and run it in a background mode
+   docker run -dit ubuntu /bin/bash
+
