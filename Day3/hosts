@@ -1,2 +1,16 @@
-ubuntu1 ansible_port=2001 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/abridge/.ssh/id_rsa
-ubuntu2 ansible_port=2002 ansible_user=root ansible_host=localhost ansible_private_key_file=/home/abridge/.ssh/id_rsa
+[all]
+ubuntu1 ansible_port=2001
+ubuntu2 ansible_port=2002
+centos1 ansible_port=2003
+centos2 ansible_port=2004
+
+[all:vars]
+ansible_user=root
+ansible_host=localhost
+ansible_private_key_file=/home/abridge/.ssh/id_rsa
+
+[ubuntu]
+ubuntu[1:2]
+
+[centos]
+centos[1:2]
