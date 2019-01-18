@@ -1,5 +1,6 @@
 - name: Build ubuntu and centos docker images
   hosts: localhost
+  ignore_errors: yes
   tasks:
 
    - name: Remove all existing containers
